@@ -17,7 +17,7 @@ public class Player_Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(-movementSpeed, 0, 0);
+            transform.Translate(movementSpeed, 0, 0);
             transform.localScale += Achicarse;
 
             if (transform.localScale.y < 0.2)
@@ -29,7 +29,7 @@ public class Player_Movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(movementSpeed, 0, 0);
+            transform.Translate(-movementSpeed, 0, 0);
             transform.localScale += Achicarse;
 
             if (transform.localScale.y < 0.2)
