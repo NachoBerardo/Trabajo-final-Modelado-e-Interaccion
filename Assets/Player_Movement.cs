@@ -8,7 +8,7 @@ public class Player_Movement : MonoBehaviour
     float movementSpeed = 0.1f;
     float rotationSpeed = 1;
     Vector3 Achicarse, Spawn, ScaleFrio, ScaleCaliente;
-    bool HasJumped, Limite;
+    bool HasJumped;
     Rigidbody rb;
     public GameObject player;
 
@@ -93,15 +93,8 @@ public class Player_Movement : MonoBehaviour
         {
             if (transform.localScale.y < 3.0)
             {
-                while (Limite)
-                {
-                    transform.localScale += ScaleFrio;
-                }
-            }
-
-            else
-            {
-                Limite = false;
+                transform.localScale += ScaleFrio;
+                transform.position = Spawn;
             }
         }
 
@@ -110,10 +103,6 @@ public class Player_Movement : MonoBehaviour
             if (transform.localScale.y > 0.2)
             {
                 transform.localScale += ScaleCaliente;
-            }
-
-            else
-            {
                 transform.position = Spawn;
             }
         }
