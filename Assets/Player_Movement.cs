@@ -7,7 +7,7 @@ public class Player_Movement : MonoBehaviour
 {
     float movementSpeed = 0.1f;
     float rotationSpeed = 1;
-    Vector3 Achicarse, Spawn, ScaleFrio, ScaleCaliente;
+    Vector3 Achicarse, Spawn, ScaleFrio, ScaleCaliente, RotacionInicial;
     bool HasJumped;
     Rigidbody rb;
     public GameObject player;
@@ -16,9 +16,10 @@ public class Player_Movement : MonoBehaviour
     {
         Achicarse = new Vector3(-0.001f, -0.001f, -0.001f);
         ScaleFrio = new Vector3(0.0075f, 0.0075f, 0.0075f);
-        ScaleCaliente = new Vector3(0.0075f, 0.0075f, 0.0075f);
+        ScaleCaliente = new Vector3(-0.0075f, -0.0075f, -0.0075f);
         Spawn = new Vector3(-4, 0.5f, 0);
         rb = GetComponent<Rigidbody>();
+        RotacionInicial = new Vector3(0, 0, 0);
     }
 
     void Update()
@@ -32,6 +33,7 @@ public class Player_Movement : MonoBehaviour
             {
                 transform.position = Spawn;
                 transform.localScale = new Vector3(1, 1, 1);
+                transform.eulerAngles = RotacionInicial;
             }
         }
 
@@ -69,11 +71,10 @@ public class Player_Movement : MonoBehaviour
             HasJumped = false;
         }
 
-        if(transform.position.y < -11)
+        if (transform.position.y < -11)
         {
             transform.position = Spawn;
         }
-
     }
 
     void OnCollisionEnter(Collision col)
@@ -83,18 +84,24 @@ public class Player_Movement : MonoBehaviour
             HasJumped = true;
         }
 
-        if (col.gameObject.tag == "Death")
+        if (col.gameObject.tag == "Placa Fria")
         {
-            transform.localScale = new Vector3(1, 1, 1);
-            transform.position = Spawn;
+            HasJumped = true;
         }
 
+        if (col.gameObject.tag == "Placa Caliente")
+        {
+            HasJumped = true;
+        }
+    }
+
+    void OnCollisionStay(Collision col)
+    {
         if (col.gameObject.tag == "Placa Fria")
         {
             if (transform.localScale.y < 3.0)
             {
                 transform.localScale += ScaleFrio;
-                transform.position = Spawn;
             }
         }
 
@@ -103,8 +110,14 @@ public class Player_Movement : MonoBehaviour
             if (transform.localScale.y > 0.2)
             {
                 transform.localScale += ScaleCaliente;
+            }
+
+            else
+            {
                 transform.position = Spawn;
+                transform.localScale = new Vector3(1, 1, 1);
             }
         }
     }
+    
 }

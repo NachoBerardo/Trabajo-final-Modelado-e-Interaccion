@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Player_Death : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Vector3 Spawn;
+
     void Start()
     {
-        
+        Spawn = new Vector3(-4, 0.5f, 0);
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter(Collision col)
     {
-        
+        if (col.gameObject.tag == "Death")
+        {
+            transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            transform.position = Spawn;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
     }
 }
