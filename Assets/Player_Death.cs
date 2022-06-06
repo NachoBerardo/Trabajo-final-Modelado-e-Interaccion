@@ -17,7 +17,6 @@ public class Player_Death : MonoBehaviour
         {
             transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             transform.position = Spawn;
-            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 }
