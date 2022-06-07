@@ -9,7 +9,7 @@ public class Player_Death : MonoBehaviour
 
     void Start()
     {
-        Spawn = Spawn = new Vector3(-4, 0.5f, 0);
+        Spawn = new Vector3(-4, 0.5f, 0);
         rb = GetComponent<Rigidbody>();
     }
 
