@@ -17,7 +17,6 @@ public class Player_Movement : MonoBehaviour
         Achicarse = new Vector3(-0.001f, -0.001f, -0.001f);
         ScaleFrio = new Vector3(0.0075f, 0.0075f, 0.0075f);
         ScaleCaliente = new Vector3(-0.0075f, -0.0075f, -0.0075f);
-        Spawn = new Vector3(-4, 0.5f, 0);
         rb = GetComponent<Rigidbody>();
         RotacionInicial = new Vector3(0, 0, 0);
     }
@@ -28,25 +27,12 @@ public class Player_Movement : MonoBehaviour
         {
             transform.Translate(movementSpeed, 0, 0);
             transform.localScale += Achicarse;
-
-            if (transform.localScale.y < 0.2)
-            {
-                transform.position = Spawn;
-                transform.localScale = new Vector3(1, 1, 1);
-                transform.eulerAngles = RotacionInicial;
-            }
         }
 
         if (Input.GetKey(KeyCode.S))
         {
             transform.Translate(-movementSpeed, 0, 0);
             transform.localScale += Achicarse;
-
-            if (transform.localScale.y < 0.2)
-            {
-                transform.position = Spawn;
-                transform.localScale = new Vector3(1, 1, 1);
-            }
         }
 
         if (Input.GetKey(KeyCode.D))
@@ -61,8 +47,7 @@ public class Player_Movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.R))
         {
-            transform.position = Spawn;
-            transform.localScale = new Vector3(1, 1, 1);
+            GetComponent<Player_Death>().Death();
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && HasJumped)
@@ -73,7 +58,7 @@ public class Player_Movement : MonoBehaviour
 
         if (transform.position.y < -11)
         {
-            transform.position = Spawn;
+            GetComponent<Player_Death>().Death();
         }
     }
 
@@ -110,12 +95,6 @@ public class Player_Movement : MonoBehaviour
             if (transform.localScale.y > 0.2)
             {
                 transform.localScale += ScaleCaliente;
-            }
-
-            else
-            {
-                transform.position = Spawn;
-                transform.localScale = new Vector3(1, 1, 1);
             }
         }
     }
