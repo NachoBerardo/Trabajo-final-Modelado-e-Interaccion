@@ -7,10 +7,10 @@ public class Player_Movement : MonoBehaviour
 {
     float movementSpeed = 0.1f;
     float rotationSpeed = 1;
-    Vector3 Achicarse, Spawn, ScaleFrio, ScaleCaliente, RotacionInicial;
+    Vector3 Achicarse, ScaleFrio, ScaleCaliente, RotacionInicial;
     bool HasJumped;
     Rigidbody rb;
-    public GameObject player;
+    public Text Porcentaje;
 
     void Start()
     {
@@ -60,6 +60,13 @@ public class Player_Movement : MonoBehaviour
         {
             GetComponent<Player_Death>().Death();
         }
+
+        //if (Input.GetKeyDown(KeyCode.UpArrow))
+        //{
+        //    rb.AddForce(transform.right * movementSpeed, ForceMode.Acceleration);
+        //}
+        //Idea para que el cubo se deslice 
+
     }
 
     void OnCollisionEnter(Collision col)
@@ -96,7 +103,17 @@ public class Player_Movement : MonoBehaviour
             {
                 transform.localScale += ScaleCaliente;
             }
+
+            else
+            {
+                GetComponent<Player_Death>().Death();
+            }
         }
     }
-    
+
+    //private void OnTriggerStay(Collider other)
+    //{
+        //idea Gero de que sea un espcio y no algo fisico. Pero deberia poner el prefab de las placas on trigger. 
+    //}
+
 }

@@ -33,7 +33,6 @@ public class Player_Death : MonoBehaviour
         transform.rotation = new Quaternion(0, 0, 0, 0);
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
-        Debug.Log("xd");
     }
 
 }
