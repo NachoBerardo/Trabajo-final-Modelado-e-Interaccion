@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Player_Movement : MonoBehaviour
 {
     float movementSpeed = 0.1f;
-    float rotationSpeed = 1;
+    float rotationSpeed = 1.3f;
     Vector3 Achicarse, ScaleFrio, ScaleCaliente, RotacionInicial;
     bool HasJumped;
     Rigidbody rb;
