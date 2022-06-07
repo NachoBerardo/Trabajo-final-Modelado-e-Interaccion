@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Player_Movement : MonoBehaviour
 {
-    float movementSpeed = 0.1f;
-    float rotationSpeed = 1.3f;
+    float movementSpeed = 0.2f;
+    float rotationSpeed = 2f;
     Vector3 Achicarse, ScaleFrio, ScaleCaliente, RotacionInicial;
     bool HasJumped;
     Rigidbody rb;
@@ -15,8 +15,8 @@ public class Player_Movement : MonoBehaviour
     void Start()
     {
         Achicarse = new Vector3(-0.001f, -0.001f, -0.001f);
-        ScaleFrio = new Vector3(0.0075f, 0.0075f, 0.0075f);
-        ScaleCaliente = new Vector3(-0.0075f, -0.0075f, -0.0075f);
+        ScaleFrio = new Vector3(0.008f, 0.008f, 0.008f);
+        ScaleCaliente = new Vector3(-0.0055f, -0.0055f, -0.0055f);
         rb = GetComponent<Rigidbody>();
         RotacionInicial = new Vector3(0, 0, 0);
     }
@@ -66,6 +66,8 @@ public class Player_Movement : MonoBehaviour
         //    rb.AddForce(transform.right * movementSpeed, ForceMode.Acceleration);
         //}
         //Idea para que el cubo se deslice 
+
+        Porcentaje.text ="%" + ((transform.localScale.y - 0.2f) / 0.8 * 100).ToString();
 
     }
 

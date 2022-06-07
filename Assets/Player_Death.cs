@@ -19,7 +19,10 @@ public class Player_Death : MonoBehaviour
         {
             Death();
         }
+    }
 
+    void Update()
+    {
         if (transform.localScale.y < 0.2)
         {
             Death();
