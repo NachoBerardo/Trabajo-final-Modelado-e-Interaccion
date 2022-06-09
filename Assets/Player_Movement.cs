@@ -81,11 +81,13 @@ public class Player_Movement : MonoBehaviour
         if (col.gameObject.tag == "Placa Fria")
         {
             HasJumped = true;
+            GetComponent<Play_Sound>().SonidoCongelarse();
         }
 
         if (col.gameObject.tag == "Placa Caliente")
         {
             HasJumped = true;
+            GetComponent<Play_Sound>().SonidoDerretirse();
         }
     }
 
@@ -93,6 +95,7 @@ public class Player_Movement : MonoBehaviour
     {
         if (col.gameObject.tag == "Placa Fria")
         {
+            
             if (transform.localScale.y < 3.0)
             {
                 transform.localScale += ScaleFrio;
@@ -113,9 +116,10 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
+
     //private void OnTriggerStay(Collider other)
     //{
-        //idea Gero de que sea un espcio y no algo fisico. Pero deberia poner el prefab de las placas on trigger. 
+    //idea Gero de que sea un espcio y no algo fisico. Pero deberia poner el prefab de las placas on trigger. 
     //}
 
 }

@@ -31,6 +31,7 @@ public class Player_Death : MonoBehaviour
 
     public void Death()
     {
+        GetComponent<Play_Sound>().SonidoMuerte();
         transform.position = Spawn;
         transform.localScale = new Vector3(1, 1, 1);
         transform.rotation = new Quaternion(0, 0, 0, 0);
