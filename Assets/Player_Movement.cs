@@ -67,7 +67,7 @@ public class Player_Movement : MonoBehaviour
         //}
         //Idea para que el cubo se deslice 
 
-        Porcentaje.text ="%" + ((transform.localScale.y - 0.2f) / 0.8 * 100).ToString();
+        Porcentaje.text = ((transform.localScale.y - 0.2f) / 0.8 * 100).ToString() + "%";
 
     }
 
