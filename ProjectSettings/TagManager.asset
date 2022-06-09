@@ -8,6 +8,7 @@ TagManager:
   - Death
   - Placa Fria
   - Placa Caliente
+  - Ganaste
   layers:
   - Default
   - TransparentFX

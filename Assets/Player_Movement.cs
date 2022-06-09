@@ -11,6 +11,8 @@ public class Player_Movement : MonoBehaviour
     bool HasJumped;
     Rigidbody rb;
     public Text Porcentaje;
+    public GameObject Confeti;
+    GameObject clon;
 
     void Start()
     {
@@ -69,7 +71,8 @@ public class Player_Movement : MonoBehaviour
         //}
         //Idea para que el cubo se deslice 
 
-        Porcentaje.text = ((transform.localScale.y - 0.2f) / 0.8 * 100).ToString();
+        Porcentaje.text = Mathf.Floor(((transform.localScale.y - 0.2f) / 0.8f * 100f)).ToString() + "%";
+        //time. deltatie para hacer lo de contador 
 
     }
 
@@ -78,6 +81,16 @@ public class Player_Movement : MonoBehaviour
         if (col.gameObject.tag == "Ground")
         {
             HasJumped = true;
+        }
+
+        if (col.gameObject.tag == "Ganaste")
+        {
+            HasJumped = true;
+            for(int i = 0; i<20; i++)
+            {
+                clon = Instantiate(Confeti);
+                Destroy(clon, 4);
+            }
         }
 
         if (col.gameObject.tag == "Placa Fria")
