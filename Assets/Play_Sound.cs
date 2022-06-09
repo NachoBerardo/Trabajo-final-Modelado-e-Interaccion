@@ -17,6 +17,19 @@ public class Play_Sound : MonoBehaviour
 
     }
 
+    void OnCollisionExit(Collision col)
+    {
+        if (col.gameObject.tag == "Placa Caliente")
+        {
+            FuenteAudio.Stop();
+        }
+
+        if (col.gameObject.tag == "Placa Fria")
+        {
+            FuenteAudio.Stop();
+        }
+    }
+
     public void SonidoMuerte()
     {
         FuenteAudio.clip = Muerte;
@@ -33,5 +46,7 @@ public class Play_Sound : MonoBehaviour
     {
         FuenteAudio.clip = Congelarse;
         FuenteAudio.Play();
-    }
+    } 
+
+    
 }

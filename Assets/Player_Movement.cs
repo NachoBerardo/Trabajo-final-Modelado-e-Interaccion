@@ -23,6 +23,8 @@ public class Player_Movement : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(Time.time);
+
         if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(movementSpeed, 0, 0);
@@ -67,7 +69,7 @@ public class Player_Movement : MonoBehaviour
         //}
         //Idea para que el cubo se deslice 
 
-        Porcentaje.text = ((transform.localScale.y - 0.2f) / 0.8 * 100).ToString() + "%";
+        Porcentaje.text = ((transform.localScale.y - 0.2f) / 0.8 * 100).ToString();
 
     }
 
@@ -95,7 +97,7 @@ public class Player_Movement : MonoBehaviour
     {
         if (col.gameObject.tag == "Placa Fria")
         {
-            
+
             if (transform.localScale.y < 3.0)
             {
                 transform.localScale += ScaleFrio;
@@ -112,9 +114,11 @@ public class Player_Movement : MonoBehaviour
             else
             {
                 GetComponent<Player_Death>().Death();
+                
             }
         }
     }
+
 
 
     //private void OnTriggerStay(Collider other)
