@@ -75,8 +75,6 @@ public class Player_Movement : MonoBehaviour
         Porcentaje.text = Mathf.Floor(((transform.localScale.y - 0.2f) / 0.8f * 100f)).ToString() + "%";
         Debug.Log(tiempo);
         tiempo += Time.deltaTime;
-        //time. deltatie para hacer lo de contador 
-
     }
 
     void OnCollisionEnter(Collision col)
@@ -101,7 +99,7 @@ public class Player_Movement : MonoBehaviour
                 }
             }
 
-            else if (tiempo > 45 && tiempo <= 90 && EstrellasSpawned)
+            else if (tiempo > 45 && tiempo <= 70 && EstrellasSpawned == true)
             {
                 EstrellasSpawned = false;
 
@@ -112,7 +110,7 @@ public class Player_Movement : MonoBehaviour
                 }
             }
 
-            else if (tiempo > 90 && EstrellasSpawned)
+            else if (tiempo > 90 && EstrellasSpawned == true)
             {
                 EstrellasSpawned = false;
 
