@@ -8,7 +8,7 @@ public class Player_Movement : MonoBehaviour
     float movementSpeed = 0.2f;
     float rotationSpeed = 2f;
     Vector3 Achicarse, ScaleFrio, ScaleCaliente, RotacionInicial;
-    bool HasJumped;
+    bool HasJumped, EstrellasSpawned = true;
     Rigidbody rb;
     public Text Porcentaje;
     public GameObject Estrella;
@@ -26,7 +26,7 @@ public class Player_Movement : MonoBehaviour
 
     void Update()
     {
-        
+        Debug.Log(tiempo);
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -90,23 +90,37 @@ public class Player_Movement : MonoBehaviour
         {
             HasJumped = true;
 
-            if (tiempo <= 60)
+            if (tiempo <= 45 && EstrellasSpawned==true)
             {
-                for(int i = 0; i <= 9; i += 3)
+                EstrellasSpawned = false;
+
+                for(int i = 0; i < 9; i += 3)
                 {
                     clon = Instantiate(Estrella);
-                    clon.transform.position = new Vector3(107 , 1, -6+i);
+                    clon.transform.position = new Vector3(107 , 1, -3+i);
                 }
             }
 
-            else if (tiempo > 60 && tiempo <= 90)
+            else if (tiempo > 45 && tiempo <= 90 && EstrellasSpawned)
             {
+                EstrellasSpawned = false;
 
+                for (int i = 0; i < 6; i += 3)
+                {
+                    clon = Instantiate(Estrella);
+                    clon.transform.position = new Vector3(107, 1, -1.5f + i);
+                }
             }
 
-            else
+            else if (tiempo > 90 && EstrellasSpawned)
             {
-                 
+                EstrellasSpawned = false;
+
+                for (int i = 0; i < 3; i += 3)
+                {
+                    clon = Instantiate(Estrella);
+                    clon.transform.position = new Vector3(107, 1, -1.5f + i);
+                }
             }
         }
 
