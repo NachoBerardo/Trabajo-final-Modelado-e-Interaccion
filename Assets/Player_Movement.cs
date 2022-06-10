@@ -11,7 +11,7 @@ public class Player_Movement : MonoBehaviour
     bool HasJumped;
     Rigidbody rb;
     public Text Porcentaje;
-    public GameObject Confeti;
+    public GameObject Estrella;
     GameObject clon;
     public float tiempo = 0;
 
@@ -92,7 +92,11 @@ public class Player_Movement : MonoBehaviour
 
             if (tiempo <= 60)
             {
-
+                for(int i = 0; i <= 9; i += 3)
+                {
+                    clon = Instantiate(Estrella);
+                    clon.transform.position = new Vector3(107 , 1, -6+i);
+                }
             }
 
             else if (tiempo > 60 && tiempo <= 90)
@@ -102,7 +106,7 @@ public class Player_Movement : MonoBehaviour
 
             else
             {
-
+                 
             }
         }
 
