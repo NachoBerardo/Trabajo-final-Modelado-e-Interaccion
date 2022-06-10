@@ -13,6 +13,7 @@ public class Player_Movement : MonoBehaviour
     public Text Porcentaje;
     public GameObject Confeti;
     GameObject clon;
+    public float tiempo = 0;
 
     void Start()
     {
@@ -25,7 +26,7 @@ public class Player_Movement : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(Time.time);
+        
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -72,6 +73,8 @@ public class Player_Movement : MonoBehaviour
         //Idea para que el cubo se deslice 
 
         Porcentaje.text = Mathf.Floor(((transform.localScale.y - 0.2f) / 0.8f * 100f)).ToString() + "%";
+        Debug.Log(tiempo);
+        tiempo += Time.deltaTime;
         //time. deltatie para hacer lo de contador 
 
     }
@@ -86,10 +89,20 @@ public class Player_Movement : MonoBehaviour
         if (col.gameObject.tag == "Ganaste")
         {
             HasJumped = true;
-            for(int i = 0; i<20; i++)
+
+            if (tiempo <= 60)
             {
-                clon = Instantiate(Confeti);
-                Destroy(clon, 4);
+
+            }
+
+            else if (tiempo > 60 && tiempo <= 90)
+            {
+
+            }
+
+            else
+            {
+
             }
         }
 

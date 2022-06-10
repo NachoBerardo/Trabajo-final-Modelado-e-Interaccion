@@ -2842,75 +2842,6 @@ Transform:
   m_Father: {fileID: 964634087}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1482841850
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8202074297329758984, guid: 1b069930355ebcb42b707411ce14d5f1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 100.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8202074297329758984, guid: 1b069930355ebcb42b707411ce14d5f1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 8202074297329758984, guid: 1b069930355ebcb42b707411ce14d5f1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 8202074297329758984, guid: 1b069930355ebcb42b707411ce14d5f1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8202074297329758984, guid: 1b069930355ebcb42b707411ce14d5f1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.6966906
-      objectReference: {fileID: 0}
-    - target: {fileID: 8202074297329758984, guid: 1b069930355ebcb42b707411ce14d5f1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8202074297329758984, guid: 1b069930355ebcb42b707411ce14d5f1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.71737176
-      objectReference: {fileID: 0}
-    - target: {fileID: 8202074297329758984, guid: 1b069930355ebcb42b707411ce14d5f1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8202074297329758984, guid: 1b069930355ebcb42b707411ce14d5f1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8202074297329758984, guid: 1b069930355ebcb42b707411ce14d5f1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -88.324005
-      objectReference: {fileID: 0}
-    - target: {fileID: 8202074297329758984, guid: 1b069930355ebcb42b707411ce14d5f1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8202074297329758988, guid: 1b069930355ebcb42b707411ce14d5f1,
-        type: 3}
-      propertyPath: m_Name
-      value: Confeti
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1b069930355ebcb42b707411ce14d5f1, type: 3}
 --- !u!1001 &1513684565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3262,7 +3193,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 315.3, y: -202}
+  m_AnchoredPosition: {x: 393, y: -202}
   m_SizeDelta: {x: 169.44405, y: 38.413704}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1814157050
@@ -3703,6 +3634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Porcentaje: {fileID: 1814157050}
   Confeti: {fileID: 8202074297329758988, guid: 1b069930355ebcb42b707411ce14d5f1, type: 3}
+  tiempo: 0
 --- !u!114 &1960603825
 MonoBehaviour:
   m_ObjectHideFlags: 0
