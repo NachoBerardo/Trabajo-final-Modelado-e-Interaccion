@@ -10,7 +10,7 @@ public class Player_Movement : MonoBehaviour
     Vector3 Achicarse, ScaleFrio, ScaleCaliente, RotacionInicial;
     bool HasJumped, EstrellasSpawned = true;
     Rigidbody rb;
-    public Text Porcentaje;
+    public Text Porcentaje, Ganaste;
     public GameObject Estrella;
     GameObject clon;
     public float tiempo = 0;
@@ -87,6 +87,7 @@ public class Player_Movement : MonoBehaviour
         if (col.gameObject.tag == "Ganaste")
         {
             HasJumped = true;
+            Ganaste.gameObject.SetActive(true);
 
             if (tiempo <= 45 && EstrellasSpawned==true)
             {
