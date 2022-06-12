@@ -156,7 +156,6 @@ public class Player_Movement : MonoBehaviour
             else
             {
                 GetComponent<Player_Death>().Death();
-                
             }
         }
     }
