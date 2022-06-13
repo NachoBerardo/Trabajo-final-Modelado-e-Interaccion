@@ -88,6 +88,7 @@ public class Player_Movement : MonoBehaviour
         {
             HasJumped = true;
             Ganaste.gameObject.SetActive(true);
+            Estrella.SetActive(true);
 
             if (tiempo <= 45 && EstrellasSpawned==true)
             {
