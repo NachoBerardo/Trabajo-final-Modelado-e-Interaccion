@@ -90,14 +90,14 @@ public class Player_Movement : MonoBehaviour
             Ganaste.gameObject.SetActive(true);
             Estrella.SetActive(true);
 
-            if (tiempo <= 45 && EstrellasSpawned==true)
+            if (tiempo <= 45 && EstrellasSpawned == true)
             {
                 EstrellasSpawned = false;
 
-                for(int i = 0; i < 9; i += 3)
+                for (int i = 0; i < 9; i += 3)
                 {
                     clon = Instantiate(Estrella);
-                    clon.transform.position = new Vector3(107 , 1, -3+i);
+                    clon.transform.position = new Vector3(107, 1, -3 + i);
                 }
             }
 
@@ -161,6 +161,17 @@ public class Player_Movement : MonoBehaviour
             }
         }
     }
+
+    void OnCollisionExit(Collision col)
+    {
+        if(col.gameObject.tag == "Ganaste")
+        {
+            Estrella.SetActive(false);
+            Ganaste.gameObject.SetActive(false);
+        }
+    }
+
+
 
 
 
