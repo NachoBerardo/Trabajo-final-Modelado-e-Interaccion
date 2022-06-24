@@ -39,6 +39,7 @@ public class Player_Death : MonoBehaviour
         rb.angularVelocity = Vector3.zero;
         GetComponent<Player_Movement>().tiempo = 0;
         GetComponent<Player_Movement>().Estrella.SetActive(false);
+       // GetComponent<Player_Movement>().clon.SetActive(false);
         GetComponent<Player_Movement>().Ganaste.gameObject.SetActive(false);
     }
 

@@ -12,7 +12,7 @@ public class Player_Movement : MonoBehaviour
     Rigidbody rb;
     public Text Porcentaje, Ganaste;
     public GameObject Estrella;
-    GameObject clon;
+    public GameObject clon;
     public float tiempo = 0;
 
     void Start()
