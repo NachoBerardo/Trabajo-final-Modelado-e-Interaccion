@@ -142,7 +142,7 @@ public class Player_Movement : MonoBehaviour
         if (col.gameObject.tag == "Placa Fria")
         {
 
-            if (transform.localScale.y < 3.0)
+            if (transform.localScale.y < 2.0)
             {
                 transform.localScale += ScaleFrio;
             }
